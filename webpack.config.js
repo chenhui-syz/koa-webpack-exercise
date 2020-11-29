@@ -16,7 +16,7 @@ const webpackconfig = {
     },
     devtool: 'eval-source-map',
     module: {
-        rule: [{
+        rules: [{
             test: /\.(js|jsx)$/,
             use: {
                 loader: 'babel-loader'
@@ -25,7 +25,7 @@ const webpackconfig = {
         }]
     },
     externals: [nodeExternals()],
-    plugin: [
+    plugins: [
         new CleanWebpackPlugin()
     ],
     node: {
@@ -39,5 +39,7 @@ const webpackconfig = {
         path: true
     }
 }
+
+console.log(webpackconfig)
 
 module.exports = webpackconfig
