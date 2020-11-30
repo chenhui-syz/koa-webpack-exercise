@@ -1,4 +1,5 @@
 const path = require('path')
+const utils = require('./utils')
 const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 const {
@@ -8,11 +9,11 @@ const {
 const webpackconfig = {
     target: 'node',
     entry: {
-        server: path.join(__dirname, 'src/index.js')
+        server: path.join(utils.APP_PATH, 'index.js')
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.join(__dirname, './dist')
+        path: path.join(utils.DIST_PATH, './')
     },
     module: {
         rules: [{

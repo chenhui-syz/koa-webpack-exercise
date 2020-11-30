@@ -13,3 +13,13 @@ module.exports = function (ctx) {
         "message": "hello from a!!!!!"
     }
 }
+
+// class DemoController {
+//     constructor() {}
+//     async demo(ctx) {
+//         ctx.body = {
+//             msg: 'body message'
+//         }
+//     }
+// }
+// export default new DemoController()

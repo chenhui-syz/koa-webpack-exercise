@@ -26,7 +26,10 @@ const middleware = compose([
     koaBody(),
     statics(path.join(__dirname, '../public')),
     cors(),
-    jsonutil({ pretty: false, param: 'pretty' }),
+    jsonutil({
+        pretty: false,
+        param: 'pretty'
+    }),
     helmet()
 ])
 app.use(middleware)
