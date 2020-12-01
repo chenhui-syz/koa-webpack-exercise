@@ -1,16 +1,6 @@
-// function a(ctx) {
-//     ctx.body = {
-//         "message": "hello from a"
-//     }
-// }
-
-// module.exports = {
-//     a
-// }
-
 module.exports = function (ctx) {
     ctx.body = {
-        "message": "hello from a!!!!!"
+        "message": "hello from demoController!!!!!"
     }
 }
 
@@ -18,7 +8,7 @@ module.exports = function (ctx) {
 //     constructor() {}
 //     async demo(ctx) {
 //         ctx.body = {
-//             msg: 'body message'
+//             'msg': 'body message'
 //         }
 //     }
 // }

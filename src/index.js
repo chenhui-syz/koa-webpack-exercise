@@ -14,11 +14,18 @@ import koaBody from 'koa-body'
 import jsonutil from 'koa-json'
 import cors from '@koa/cors'
 import compose from 'koa-compose'
+import compress from 'koa-compress'
 
 const app = new koa()
+const isDevMode = process.env.NODE_ENV === 'production' ? false : true
 
-// app.use(.....)
+// app.use(koaBody())
+// app.use(cors())
 // app.use(helmet())
+// app.use(jsonutil({
+//     pretty: false,
+//     param: 'pretty'
+// }))
 // app.use(statics(path.join(__dirname, '../public')))
 // app.use(router())
 // 把所有的中间件使用compose整合到一起
@@ -32,6 +39,11 @@ const middleware = compose([
     }),
     helmet()
 ])
+
+if (!isDevMode) {
+    app.use(compress())
+}
+
 app.use(middleware)
 app.use(router())
 
